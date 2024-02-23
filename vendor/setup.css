@@ -1,0 +1,23 @@
+/* Сброс стандартных отступов браузера */
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+*:focus,
+*:active {
+  /* Убирает стандартный контур (outline), который браузеры обычно применяют к элементам в фокусе.  */
+  /* outline: none !important; */
+  /* Устанавливает цвет выделения (подсветки) при активации */
+  /* -webkit-tap-highlight-color: transparent; */
+}
