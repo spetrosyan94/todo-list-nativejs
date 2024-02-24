@@ -2,6 +2,7 @@
 @import url(./vendor/setup.css);
 @import url(./vendor/fonts/fonts.css);
 
+
 @keyframes bganimation {
   0% {
     background-position: 0% 50%;
@@ -13,28 +14,6 @@
 
   100% {
     background-position: 0% 50%;
-  }
-}
-
-@keyframes color-change-5x {
-  0% {
-    background: #19dcea;
-  }
-
-  25% {
-    background: #b22cff;
-  }
-
-  50% {
-    background: #ea2222;
-  }
-
-  75% {
-    background: #f5be10;
-  }
-
-  100% {
-    background: #3bd80d;
   }
 }
 
@@ -52,6 +31,7 @@
     opacity: 1;
   }
 }
+
 
 .page {
   /* min-height: 100dvh; */
