@@ -163,7 +163,7 @@
 
 .todo__input_none-text::placeholder {
   color: #d21a1a;
-  font-size: clamp(16px, 3vw, 25px);
+  font-size: clamp(14px, 3vw, 25px);
 }
 
 .todo__submit-button {
