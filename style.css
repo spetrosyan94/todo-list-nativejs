@@ -64,6 +64,14 @@ font-weight: 400;
 font-style: normal;
 font-variation-settings:
   "slnt" 0;
+
+    /* Базовые вендорные префиксы сглаживание и
+    масштабирования для шрифтов страницы .page в CSS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
 }
 
 .header{
@@ -189,13 +197,6 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: 100%;
 transition: all .2s ease;
-
-  /* Выключает возможность выделения текста, в том числе при зажатии тап на мобильных устройствах */
-  user-select: none;
-  /* Отключение выделения текста при нажатии на кнопку */
-  -webkit-tap-highlight-color: transparent;
-   /* Улучшает отзывчивость кнопки на сенсорных устройствах */
-  touch-action: manipulation;
 }
 
 @media(hover: hover) {
@@ -230,6 +231,8 @@ position: relative;
 background-color: #FFF;
 cursor: pointer; */
 
+  /* Выключает возможность выделения текста, в том числе при зажатии тап на мобильных устройствах */
+  user-select: none;
   /* Отключение выделения текста при нажатии на кнопку */
   -webkit-tap-highlight-color: transparent;
    /* Улучшает отзывчивость кнопки на сенсорных устройствах */
@@ -241,14 +244,6 @@ padding: 7px;
 /* background-color: #FFF; */
 cursor: pointer;
 transition:all .2s ease;
-
-
-  /* Выключает возможность выделения текста, в том числе при зажатии тап на мобильных устройствах */
-  user-select: none;
-  /* Отключение выделения текста при нажатии на кнопку */
-  -webkit-tap-highlight-color: transparent;
-   /* Улучшает отзывчивость кнопки на сенсорных устройствах */
-  touch-action: manipulation;
 }
 
 @media(hover:hover) {
@@ -291,13 +286,6 @@ gap: 0 15px;
   transform: rotate(0deg) scale(1);
 
   transition: all .2s ease-in-out;
-
-    /* Выключает возможность выделения текста, в том числе при зажатии тап на мобильных устройствах */
-    user-select: none;
-    /* Отключение выделения текста при нажатии на кнопку */
-    -webkit-tap-highlight-color: transparent;
-     /* Улучшает отзывчивость кнопки на сенсорных устройствах */
-    touch-action: manipulation;
 }
 
 .todo__item-text::before{
@@ -327,13 +315,6 @@ text-decoration: line-through;
   background-color: transparent;
 padding: .5rem;
 transition: all .2s ease;
-
-  /* Выключает возможность выделения текста, в том числе при зажатии тап на мобильных устройствах */
-  user-select: none;
-  /* Отключение выделения текста при нажатии на кнопку */
-  -webkit-tap-highlight-color: transparent;
-   /* Улучшает отзывчивость кнопки на сенсорных устройствах */
-  touch-action: manipulation;
 }
 
 .todo__delete-btn::before{
@@ -346,13 +327,6 @@ background-repeat: no-repeat;
 background-size: 100%;
 background-position: center;
 transition: all .2s ease;
-
-  /* Выключает возможность выделения текста, в том числе при зажатии тап на мобильных устройствах */
-  user-select: none;
-  /* Отключение выделения текста при нажатии на кнопку */
-  -webkit-tap-highlight-color: transparent;
-   /* Улучшает отзывчивость кнопки на сенсорных устройствах */
-  touch-action: manipulation;
 }
 
 @media(hover: hover){
