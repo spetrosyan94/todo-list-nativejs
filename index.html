@@ -26,11 +26,15 @@
         <label class="todo__label">
           <input class="todo__input" type="text" placeholder="Новая задача">
           <button class="todo__submit-button" type="submit" aria-label="Добавить задачу"></button>
-          <select class="todo__select">
-            <option class="todo__option" value="All">Все</option>
-            <option class="todo__option" value="Completed">Завершенные</option>
-            <option class="todo__option" value="Uncompleted">Незавершенные</option>
-          </select>
+
+          <label class="todo__label-select" for="select">
+            <select class="todo__select" id="select">
+              <option class="todo__option" value="All">Все</option>
+              <option class="todo__option" value="Completed">Завершенные</option>
+              <option class="todo__option" value="Uncompleted">Незавершенные</option>
+            </select>
+          </label>
+
         </label>
       </form>
 

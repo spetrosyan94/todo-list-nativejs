@@ -29,6 +29,7 @@ todoSubmitButton.addEventListener('click', addTodo);
 
 todoSelectButton.addEventListener('click', selectTodo);
 
+
 todoList.addEventListener('click', function (evt) {
   if (evt.target.matches('.todo__checkbox')) {
     checkTodo(evt);
