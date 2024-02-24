@@ -1,6 +1,7 @@
 const todoForm = document.querySelector('.todo__form');
 const todoInput = document.querySelector('.todo__input');
-const todoButton = document.querySelector('.todo__button');
+const todoSubmitButton = document.querySelector('.todo__submit-button');
+const todoSelectButton = document.querySelector('.todo__select');
 const todoList = document.querySelector('.todo__list');
 let todoArray = [];
 const baseTodoArray = [
@@ -24,7 +25,9 @@ const baseTodoArray = [
 
 
 
-todoButton.addEventListener('click', addTodo);
+todoSubmitButton.addEventListener('click', addTodo);
+
+todoSelectButton.addEventListener('click', selectTodo);
 
 todoList.addEventListener('click', function (evt) {
   if (evt.target.matches('.todo__checkbox')) {
@@ -174,4 +177,28 @@ function createTemplateTask(taskArray) {
     `;
     todoList.insertAdjacentHTML('beforeend', template);
   })
+}
+
+// Функция фильтрации задач
+function selectTodo() {
+  const selectValue = todoSelectButton.value;
+  let selectArray;
+
+  const filterFunctions = {
+    All: () => createTemplateTask(todoArray),
+    Completed: () => {
+      selectArray = todoArray.filter((task) => task.done === true);
+      createTemplateTask(selectArray);
+    },
+    Uncompleted: () => {
+      selectArray = todoArray.filter((task) => task.done === false);
+      createTemplateTask(selectArray);
+    }
+  }
+
+  // Вызов функции фильтрации
+  const selecredFunction = filterFunctions[selectValue];
+  if (selecredFunction) {
+    selecredFunction();
+  }
 }

@@ -125,7 +125,7 @@
   /* max-width: 100%; */
   width: 100%;
   display: flex;
-  gap: 0 15px;
+  /* gap: 0 15px; */
 
   background-color: #000000;
   border: 2px solid transparent;
@@ -148,6 +148,7 @@
   border: 0;
   background-color: transparent;
   /* font-size: 2rem; */
+  margin-right: 15px;
   font-size: clamp(16px, 4vw, 30px);
   width: 100%;
   color: #ffffff;
@@ -162,12 +163,12 @@
 
 .todo__input_none-text::placeholder {
   color: #d21a1a;
-  font-size: clamp(13px, 3vw, 25px);
+  font-size: clamp(12px, 3vw, 25px);
 }
 
-.todo__button {
+.todo__submit-button {
   border: none;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
   cursor: pointer;
   background-color: #FFF;
   padding: .2rem;
@@ -178,7 +179,7 @@
   background-size: 400% 400%;
   animation: bganimation 14s infinite;
 
-  box-shadow: 0 1px hsl(0deg 0% 25.2% / 35%) inset, 0 -1px hsl(0deg 0% 17.63%) inset, 0px 2px 10px -5px hsl(0deg 0% 0%);
+  /* box-shadow: 0 1px hsl(0deg 0% 25.2% / 35%) inset, 0 -1px hsl(0deg 0% 17.63%) inset, 0px 2px 10px -5px hsl(0deg 0% 0%); */
   filter: invert(0);
 
   transition: all .2s ease;
@@ -188,12 +189,12 @@
 }
 
 @media (min-width: 576px) {
-  .todo__button {
+  .todo__submit-button {
     padding: .5rem;
   }
 }
 
-.todo__button::before {
+.todo__submit-button::before {
   content: '';
   display: block;
   width: 40px;
@@ -206,25 +207,69 @@
 }
 
 @media(hover: hover) {
-  .todo__button:hover {
+  .todo__submit-button:hover {
     filter: invert(1);
     transform: scale(1.2);
+    border-radius: 8px;
+    z-index: 1;
   }
 }
 
 @media not all and (hover:hover) {
-  .todo__button:focus {
+  .todo__submit-button:focus {
     filter: invert(1);
   }
 }
 
-.todo__button:active::before {
+.todo__submit-button:active::before {
   transform: scale(1.5);
 }
 
-.todo__select {}
+.todo__select {
+  border: none;
+  outline: none;
+  width: 20px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  /* font-size: 20px; */
+  font-size: clamp(14px, 3vw, 20px);
+  /* background-color: #FFF; */
+  padding: .2rem;
+  background-color: transparent;
+  /* appearance: none; */
+  background-image: linear-gradient(125deg, #1E90FF, #008080, #3CB371, #48D1CC, #9370DB, #DDA0DD, #BA55D3, #B22222);
+  background-size: 400% 400%;
+  animation: bganimation 14s infinite;
+  /* box-shadow: 0 1px hsl(0deg 0% 25.2% / 35%) inset, 0 -1px hsl(0deg 0% 17.63%) inset, 0px 2px 10px -5px hsl(0deg 0% 0%); */
+  filter: invert(0);
+  transition: all .2s ease;
+  /* Улучшает отзывчивость кнопки на сенсорных устройствах */
+  touch-action: manipulation;
+}
 
-.todo__option {}
+@media(hover: hover) {
+  .todo__select:hover {
+    filter: invert(1);
+    transform: scale(1.2);
+    border-radius: 8px;
+    z-index: 1;
+  }
+}
+
+@media not all and (hover:hover) {
+  .todo__select:focus {
+    filter: invert(1);
+  }
+}
+
+.todo__select:active::before {
+  transform: scale(1.5);
+}
+
+.todo__option {
+  background-color: lightblue;
+  color: black;
+}
 
 .todo__item {
   list-style-type: none;
