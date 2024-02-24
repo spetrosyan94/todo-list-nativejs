@@ -2,7 +2,8 @@ const todoForm = document.querySelector('.todo__form');
 const todoInput = document.querySelector('.todo__input');
 const todoButton = document.querySelector('.todo__button');
 const todoList = document.querySelector('.todo__list');
-const todoArray = [
+let todoArray = [];
+const baseTodoArray = [
   {
     id: 1,
     title: 'Принять душ 💧',
@@ -16,12 +17,12 @@ const todoArray = [
   {
     id: 3,
     title: 'Писать много кода на JS 😄',
-    done: false,
+    done: true,
   },
 ];
 
-// При загрузке страницы создаем задачи из массива
-createTemplateTask(todoArray);
+
+
 
 todoButton.addEventListener('click', addTodo);
 
@@ -32,6 +33,39 @@ todoList.addEventListener('click', function (evt) {
     deleteTodo(evt);
   }
 });
+
+
+
+
+// Первоначальная инициализация массива задач при запуске страницы
+getArrayInitialize();
+
+// При загрузке страницы отрисовываем в разметке задачи из массива
+createTemplateTask(todoArray);
+
+
+
+
+// Метод для получения данных из локального хранилища браузера
+function getLocalStorage(element) {
+  return JSON.parse(localStorage.getItem(element));
+}
+
+// Метод для сохранения данных в локальном хранилище браузера
+function setLocalStorage(element) {
+  localStorage.setItem('todoArray', JSON.stringify(element));
+}
+
+// Первоначальная инициализация массива задач при запуске страницы
+function getArrayInitialize() {
+  todoArray = getLocalStorage('todoArray');
+
+  // Проверка на наличие задач в локальном хранилище
+  if (todoArray === null) {
+    todoArray = [...baseTodoArray];
+    setLocalStorage(todoArray)
+  }
+}
 
 // Создание новой задачи
 function addTodo(evt) {
@@ -61,7 +95,9 @@ function addTodo(evt) {
   // Добавление задачи в массив
   todoArray.push(todoTask);
   console.log(todoArray);
-
+  // Сохранение задач в localStorage
+  setLocalStorage(todoArray)
+  // Отрисовываем задачи в разметке на странице
   createTemplateTask(todoArray);
 }
 
@@ -77,13 +113,16 @@ function deleteTodo(evt) {
   const index = todoArray.findIndex((task) => task.id === Number(currentTodo.id));
 
   // Проверка на наличие задачи
-  if(index === -1) {
+  if (index === -1) {
     return console.log('Задача не найдена!');
   }
 
   console.log('Задача удалена!');
   // Удаление задачи из массива
   todoArray.splice(index, 1);
+  // Сохранение массива задач в localStorage
+  setLocalStorage(todoArray)
+  // Удаление задачи из разметки
   currentTodo.remove();
 }
 
@@ -99,25 +138,29 @@ function checkTodo(evt) {
   const index = todoArray.findIndex((task) => task.id === Number(currentTodo.id));
 
   // Проверка на наличие задачи
-  if(index === -1) {
+  if (index === -1) {
     return console.log('Задача не найдена!');
   }
 
   // Проверка на отмеченный чекбокс
-  if(!inputCheckbox.checked) {
+  if (!inputCheckbox.checked) {
     console.log('Чекбокс снят')
     todoArray[index].done = false;
+    // Сохранение массива задач в localStorage
+    setLocalStorage(todoArray);
     return;
   }
 
   console.log('Чекбокс отмечен')
   todoArray[index].done = true;
+  // Сохранение массива задач в localStorage
+  setLocalStorage(todoArray);
 }
 
 // Функция создания шаблона
 function createTemplateTask(taskArray) {
-      // Очистка разметки списка задач
-      todoList.innerHTML = '';
+  // Очистка разметки списка задач
+  todoList.innerHTML = '';
 
   taskArray.forEach((task) => {
     const template = `
@@ -132,4 +175,3 @@ function createTemplateTask(taskArray) {
     todoList.insertAdjacentHTML('beforeend', template);
   })
 }
-
