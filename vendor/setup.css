@@ -3,6 +3,16 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+    /* Отключает выделение текста на мобильных устройствах и десктопе */
+    user-select: none;
+    /* Базовые вендорные префиксы сглаживание и
+    масштабирования для шрифтов страницы .page в CSS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
 }
 
 *,
