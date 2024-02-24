@@ -189,17 +189,17 @@ function selectTodo() {
     All: () => createTemplateTask(todoArray),
     Completed: () => {
       selectArray = todoArray.filter((task) => task.done === true);
-      createTemplateTask(selectArray);
+      return createTemplateTask(selectArray);
     },
     Uncompleted: () => {
       selectArray = todoArray.filter((task) => task.done === false);
-      createTemplateTask(selectArray);
+      return createTemplateTask(selectArray);
     }
   }
 
   // Вызов функции фильтрации
-  const selecredFunction = filterFunctions[selectValue];
-  if (selecredFunction) {
-    selecredFunction();
+  const selectedFunction = filterFunctions[selectValue];
+  if (selectedFunction) {
+    selectedFunction();
   }
 }
