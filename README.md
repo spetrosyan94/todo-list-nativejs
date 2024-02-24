@@ -10,6 +10,7 @@
 
 ![Desktop screenshot](./screenshot/screen-1.png)
 
+## Функционал
 
 Проект "Todo List Native JS" предоставляет следующий функционал:
 
