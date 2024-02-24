@@ -62,12 +62,13 @@
   -moz-text-size-adjust: 100%;
 }
 
-.header {}
+.header {
+  margin: 20px;
+}
 
 .header__title {
   padding: 0;
   margin: 0;
-  margin-bottom: 5px;
   /* font-size: 2.5rem; */
   font-size: clamp(1.5rem, 6vw, 2.5rem);
   font-weight: 500;
@@ -82,7 +83,8 @@
 }
 
 .todo {
-  max-width: 90%;
+  /* max-width: 90%; */
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -146,7 +148,7 @@
   border: 0;
   background-color: transparent;
   /* font-size: 2rem; */
-  font-size: clamp(15px, 4vw, 30px);
+  font-size: clamp(16px, 4vw, 30px);
   width: 100%;
   color: #ffffff;
   font-family: "Geist Sans", "SF Pro", sans-serif;
@@ -220,6 +222,10 @@
   transform: scale(1.5);
 }
 
+.todo__select {}
+
+.todo__option {}
+
 .todo__item {
   list-style-type: none;
   width: 100%;
@@ -274,7 +280,7 @@ cursor: pointer; */
   justify-content: flex-end;
   align-items: center;
   gap: 0 15px;
-  font-size: clamp(13px, 3vw, 18px);
+  font-size: clamp(14px, 3vw, 18px);
   /* text-wrap: balance; */
 }
 
