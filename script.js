@@ -27,7 +27,7 @@ const baseTodoArray = [
 
 todoSubmitButton.addEventListener('click', addTodo);
 
-todoSelectButton.addEventListener('click', selectTodo);
+todoSelectButton.addEventListener('change', selectTodo);
 
 
 todoList.addEventListener('click', function (evt) {
