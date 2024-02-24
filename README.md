@@ -8,9 +8,8 @@
 
 ## Скриншот
 
-![Desktop screenshot](./screenshot/)
+![Desktop screenshot](./screenshot/screen-1.png)
 
-## Функциональность
 
 Проект "Todo List Native JS" предоставляет следующий функционал:
 
