@@ -48,7 +48,7 @@
 
 **Петросян Сергей**
 
-Проект "Что сегодня смотрим" разработан и поддерживается [Петросяном Сергеем](https://github.com/spetrosyan94) - https://github.com/spetrosyan94.
+Проект "Todo List Native JS" разработан и поддерживается [Петросяном Сергеем](https://github.com/spetrosyan94) - https://github.com/spetrosyan94.
 
 - e-mail: [syspect@bk.ru](mailto:syspect@bk.ru)
 - telegram: [@SolidHard1](https://t.me/SolidHard1)
