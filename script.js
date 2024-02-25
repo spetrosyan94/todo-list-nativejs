@@ -121,13 +121,18 @@ function deleteTodo(evt) {
     return console.log('Задача не найдена!');
   }
 
+  // Обработчик события для анимации удаления задачи из списка
+  currentTodo.classList.add('fall');
+  currentTodo.addEventListener('transitionend', () => {
+    // Удаление задачи из разметки
+    currentTodo.remove();
+  })
+
   console.log('Задача удалена!');
   // Удаление задачи из массива
   todoArray.splice(index, 1);
   // Сохранение массива задач в localStorage
   setLocalStorage(todoArray)
-  // Удаление задачи из разметки
-  currentTodo.remove();
 }
 
 function checkTodo(evt) {
@@ -186,12 +191,12 @@ function selectTodo() {
   let selectArray;
 
   const filterFunctions = {
-    All: () => createTemplateTask(todoArray),
-    Completed: () => {
+    all: () => createTemplateTask(todoArray),
+    completed: () => {
       selectArray = todoArray.filter((task) => task.done === true);
       return createTemplateTask(selectArray);
     },
-    Uncompleted: () => {
+    uncompleted: () => {
       selectArray = todoArray.filter((task) => task.done === false);
       return createTemplateTask(selectArray);
     }

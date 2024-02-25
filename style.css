@@ -1,6 +1,5 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/setup.css);
-@import url(./vendor/fonts/fonts.css);
 
 
 @keyframes bganimation {
@@ -30,6 +29,13 @@
   100% {
     opacity: 1;
   }
+}
+
+
+/* Анимация удаления задачи */
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
 }
 
 
@@ -325,6 +331,7 @@ cursor: pointer; */
 
   /* Улучшает отзывчивость кнопки на сенсорных устройствах */
   touch-action: manipulation;
+  transition: all .3s ease;
 }
 
 .todo__item-label {
@@ -376,7 +383,7 @@ cursor: pointer; */
   border: 3px solid #0069ff;
   transform: rotate(0deg) scale(1);
 
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .todo__item-label>.todo__checkbox:checked+.todo__item-text {
@@ -399,7 +406,7 @@ cursor: pointer; */
   cursor: pointer;
   background-color: transparent;
   padding: .5rem;
-  transition: all .2s ease;
+  /* transition: all .3s ease; */
 }
 
 .todo__delete-btn::before {
@@ -411,7 +418,7 @@ cursor: pointer; */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  transition: all .2s ease;
+  transition: all .3s ease;
 }
 
 @media(hover: hover) {
